@@ -4,7 +4,7 @@ ul{
 		text-decoration: none;
 	}
 }
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
 	width: 0px;
 	height: 10px;
 }
@@ -12,9 +12,15 @@ ul{
 	border-radius: 5px;
 	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 	background: rgba(0, 0, 0, 0.2);
-} 
+} */
+
+/*list变量  nth展开加index索引*/
+$menuli: red pink!default;
+
 body{
 	margin:0; padding:0; width:100%; height:100%;
+	
+}
 	.head{
 		background-color: #3399f3; color: #fff; overflow: hidden;padding: 0 15%;height: 44px;
 		.brand-con{
@@ -26,9 +32,9 @@ body{
 		.menu-con{
 			float: right;
 			ul li{
-				display:inline-block;line-height: 44px;cursor: pointer;
+				display:inline-block;line-height: 44px;cursor: pointer;background-color: nth($menuli,1);transition: padding 0.5s ease;
 				&:hover{
-					background-color: #999;padding-left: 15px;padding-right: 15px;
+					background-color: nth($menuli,2);padding-left: 15px;padding-right: 15px;
 				}
 			}
 		}
@@ -48,15 +54,8 @@ body{
 			}
 		}
 	}
-}
 @media (max-width: 768px){
-	body{
-		.head{
-			padding: 0 15px;background-color: #333;
-		}
+	.head{
+		padding: 0 15px;background-color: #333;
 	}
 }
-/*.menu1son{
-	transform: translate3d(-100%,0,0);
-	transition: transform 1.5s linear;
-}*/
